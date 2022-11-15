@@ -107,7 +107,7 @@ h1 ping h8:
 c. Any difference from Task 2 and why do you think there is a change if there is?
 The difference is that pings in task 2 cost less time, because with the mac_to_port dictionary, switches have MAC address so that packets can be send directly to destination address. 
 
-3. Q.3 Run “iperf h1 h2” and “iperf h1 h8”.
+3. Run “iperf h1 h2” and “iperf h1 h8”.
 a. What is the throughput for each case?
 Iperf h1 h2:
 	Results: [’51.2 Mbits/sec’, ’53.4 Mbits/sec’]
