@@ -81,12 +81,15 @@ c. What is the difference and explain the reasons for the difference.
 The throughput between h1 and h2 is much higher than between h1 and h8, because h1 is only connected with h2 by switch s3, but h1 to h8 needs more switches than h1 to h2.
 
 4. Which of the switches observe traffic? Please describe your way for observing 
-Because of act_like_hub() sending packets to all the switches in the network, the all switches observe traffic. In order to observe the traffic, we can add a log print statement in the method of handle_packetln() to keep track of each packets.
+Because of act_like_hub() sending packets to all the switches in the network, the all switches observe traffic. 
+In order to observe the traffic, we can add a log print statement in the method of handle_packetln() to keep track of each packets.
 
 Task 3: MAC Learning Controller
 Questions
 1. Describe how the above code works, such as how the "MAC to Port" map is established. You could use a ‘ping’ example to describe the establishment process (e.g., h1 ping h2).
-Because all the switches have own dictionaries which map the MAC address to its corresponding port number. So, if a switch receives a packet, it will check if the packet source address is present in its own dictionary and destination address of packet is present in the HashMap. Then, the switch will resend the packet to the destination address if it is, else will resend the packet to all ports.
+Because all the switches have own dictionaries which map the MAC address to its corresponding port number. 
+So, if a switch receives a packet, it will check if the packet source address is present in its own dictionary and destination address of packet is present in the HashMap. 
+Then, the switch will resend the packet to the destination address if it is, else will resend the packet to all ports.
 
 2. Have h1 ping h2, and h1 ping h8 for 100 times (e.g., h1 ping -c100 p2).
 a. How long did it take (on average) to ping for each case?
@@ -112,4 +115,5 @@ Iperf h1 h8:
 	Results: [’11.3 Mbits/sec’, ’13.2 Mbits/sec’]
 
 b. What is the difference from Task 2 and why do you think there is a change if there is?
-The throughput for h1-h2 and h1-h8 is much higher than that in task 2. I think this is because of the help of mac_to_port dictionary, switches can send packets directly to destination address so that congestion can be reduced greatly.
+The throughput for h1-h2 and h1-h8 is much higher than that in task 2. 
+I think this is because of the help of mac_to_port dictionary, switches can send packets directly to destination address so that congestion can be reduced greatly.
