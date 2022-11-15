@@ -86,7 +86,7 @@ Because of act_like_hub() sending packets to all the switches in the network, th
 Task 3: MAC Learning Controller
 Questions
 1. Describe how the above code works, such as how the "MAC to Port" map is established. You could use a ‘ping’ example to describe the establishment process (e.g., h1 ping h2).
-	Because all the switches have own dictionaries which map the MAC address to its corresponding port number. So, if a switch receives a packet, it will check if the packet source address is present in its own dictionary and destination address of packet is present in the HashMap. Then, the switch will resend the packet to the destination address if it is, else will resend the packet to all ports.
+Because all the switches have own dictionaries which map the MAC address to its corresponding port number. So, if a switch receives a packet, it will check if the packet source address is present in its own dictionary and destination address of packet is present in the HashMap. Then, the switch will resend the packet to the destination address if it is, else will resend the packet to all ports.
 
 2. Have h1 ping h2, and h1 ping h8 for 100 times (e.g., h1 ping -c100 p2).
 a. How long did it take (on average) to ping for each case?
